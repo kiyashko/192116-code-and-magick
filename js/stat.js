@@ -16,7 +16,7 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-function getRandomValue (min, max) {
+function getRandomValue(min, max) {
   return Math.random() * (max - min) + min;
 }
 
