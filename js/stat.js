@@ -16,8 +16,8 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-function getRandom() {
-  return Math.random();
+function getRandomValue (min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 var getMaxElement = function (arr) {
@@ -46,7 +46,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0,0,255,' + getRandom() + ')';
+      ctx.fillStyle = 'rgba(0,0,255,' + getRandomValue(0, 1) + ')';
     }
     ctx.fillRect(CLOUD_X + BAR_WIDTH + (BAR_GAP + BAR_WIDTH) * i, (CLOUD_HEIGHT - TEXT_GAP) - BAR_HEIGHT * times[i] / maxTime, BAR_WIDTH, BAR_HEIGHT * times[i] / maxTime);
     ctx.fillStyle = '#000';
